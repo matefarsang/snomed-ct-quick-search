@@ -27,7 +27,7 @@ export function SearchResultsDropdown({
   return (
     <div
       className={clsx(
-        "absolute z-20 w-full rounded-b-xl border-x border-b border-teal-600 bg-white",
+        "z-20 w-full rounded-b-xl border-x border-b border-teal-600 bg-white motion-safe:animate-dropdown-enter md:absolute",
         "shadow-[4px_0_0_0_rgb(204_251_241),-4px_0_0_0_rgb(204_251_241),0_4px_0_0_rgb(204_251_241),4px_4px_0_0_rgb(204_251_241),-4px_4px_0_0_rgb(204_251_241),0_10px_15px_-3px_rgb(0_0_0_/_0.1),0_4px_6px_-4px_rgb(0_0_0_/_0.1)]",
       )}
     >
