@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { MIN_SEARCH_LENGTH, RESULT_LIMIT } from "@/constants/snomedSearch";
 import { useSnomedSearch } from "@/hooks/useSnomedSearch";
 import type { SnomedConcept } from "@/types/snomed";
+
 import { ClearSearchButton } from "./ClearSearchButton";
 import { SearchResultsDropdown } from "./SearchResultsDropdown";
 
@@ -83,6 +84,7 @@ export function SnomedQuickSearch({ onSelect }: SnomedQuickSearchProps) {
   function handleSelect(concept: SnomedConcept) {
     onSelect(concept);
     setSearchTerm(concept.term);
+    setSubmittedTerm(concept.term);
     setIsDropdownOpen(false);
   }
 
@@ -125,10 +127,6 @@ export function SnomedQuickSearch({ onSelect }: SnomedQuickSearchProps) {
 
     setLimit(clampedLimit);
     setLimitInputValue(String(clampedLimit));
-
-    if (submittedTerm.trim().length >= MIN_SEARCH_LENGTH) {
-      setIsDropdownOpen(true);
-    }
   }
 
   return (
